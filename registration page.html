@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه انشاء الحساب</title>
+    <link rel="icon" href="image/icon.png">
+    <link rel="stylesheet" href="style reg.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1> <a href="index.html"><img src="image/logo5.png" width="100px" height="100px"></a></h1>
+
+        <h2>صفحة التسجيل</h2>
+
+        <div class="button-group">
+            <button id="employeeButton" class="form-toggle-button active" onclick="showForm('employee')">مواطن</button>
+            <button id="hirerButton" class="form-toggle-button" onclick="showForm('hirer')">للجهات الرسميه</button>
+        </div>
+
+        <form id="employeeForm" class="form-section active">
+            <h3>معلومات المواطن </h3>
+            <label for="firstName">الاسم الأول:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">الاسم الأخير:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">تأكيد كلمة المرور:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">تسجيل</button>
+        </form>
+
+        <form id="hirerForm" class="form-section">
+            <h3>معلومات الجهه الرسميه </h3>
+            <label for="companyName">اسم الجهه :</label>
+            <input type="text" id="companyName" name="companyName" required>
+
+            <label for="companyPhone">رقم الهاتف:</label>
+            <input type="tel" id="companyPhone" name="companyPhone" required>
+
+            <label for="companyEmail">البريد الإلكتروني:</label>
+            <input type="email" id="companyEmail" name="companyEmail" required>
+
+            <label for="companyPassword">كلمة المرور:</label>
+            <input type="password" id="companyPassword" name="companyPassword" required>
+
+            <label for="companyConfirmPassword">تأكيد كلمة المرور:</label>
+            <input type="password" id="companyConfirmPassword" name="companyConfirmPassword" required>
+
+            <button type="submit">تسجيل</button>
+        </form>
+    </div>
+
+    <script >function showForm(formType) {
+        document.getElementById('employeeForm').classList.remove('active');
+        document.getElementById('hirerForm').classList.remove('active');
+    
+        if (formType === 'employee') {
+            document.getElementById('employeeForm').classList.add('active');
+            document.getElementById('hirerForm').classList.remove('active');
+            document.getElementById('employeeButton').classList.add('active');
+            document.getElementById('hirerButton').classList.remove('active');
+        } else {
+            document.getElementById('hirerForm').classList.add('active');
+            document.getElementById('employeeForm').classList.remove('active');
+            document.getElementById('hirerButton').classList.add('active');
+            document.getElementById('employeeButton').classList.remove('active');
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        showForm('employee');
+    });
+    </script>
+</body>
+</html>

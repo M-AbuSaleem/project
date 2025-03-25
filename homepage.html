@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحه الرئسيه</title>
+    <link rel="icon" href="image/icon.png">
+
+    <link rel="stylesheet" href="style home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+       
+
+        
+
+
+
+            <nav class="nav">
+
+
+
+
+
+
+                <a href="#section4" class="nav-link">اتصل بنا</a>
+                <a href="#section2" class="nav-link">من نحن</a>
+
+                <a href="#section3" class="nav-link">الخدمات</a>
+
+                <a href="#section1" class="nav-link">الرئيسية</a>
+<div class="left-section">
+            <div class="logo-container">
+
+
+                <a href="homepage.html" title="balgh">
+                    <img src="image/image.png" class="logo-d" alt="Logo">
+                </a>
+
+
+            </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main2">
+
+      <div class="up">
+  
+        <button class="card1">
+  <text></text>
+        </button>
+  
+        
+        <button class="card2">
+          <text></text>
+  
+        </button>
+       
+  
+       </div>
+  
+  
+  <div class="center">
+  
+      <button class="cardcenter">
+  <text class="arabic-text"  ></text>
+      </button>
+  
+       </div>
+  
+  
+  
+      <div class="down">
+  
+        <button class="card3">
+          <text></text>
+  
+        </button>
+  
+  
+        <button class="card4">
+          <text></text>
+  
+        </button>
+  
+  
+       </div>
+  
+    </div>
+
+    <button id="scrollTopBtn">↑</button>
+
+    <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let header = document.querySelector(".header");
+            if (window.scrollY > 50) {
+                header.style.background = "#555";
+            } else {
+                header.style.background = "#333";
+            }
+        });
+
+        let scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+
+
+
+
+        let currentIndex = 0; 
+const images = document.querySelectorAll('.slider-images img');
+const totalImages = images.length;
+
+function showImage(index) {
+  const slider = document.querySelector('.slider-images');
+  const newTransformValue = -index * 100;
+  slider.style.transform = `translateX(${newTransformValue}%)`; 
+}
+
+document.querySelector('.prev').addEventListener('click', function() {
+  if (currentIndex === 0) {
+    currentIndex = totalImages - 1; 
+  } else {
+    currentIndex--;
+  }
+  showImage(currentIndex);
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+  if (currentIndex === totalImages - 1) {
+    currentIndex = 0; 
+  } else {
+    currentIndex++;
+  }
+  showImage(currentIndex);
+});
+
+    </script>
+
+
+
+</body>
+</html>
